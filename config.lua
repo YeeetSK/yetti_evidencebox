@@ -4,6 +4,8 @@ Config.Debug = false -- Toggle debug - true / false
 
 Config.Model = `v_res_filebox01` -- The model of the evidence box
 
+Config.DisplayDistance = 50
+
 Config.BoxLocations = { -- Where the boxes are created at
    [1] = { coords = vector4(462.2334, -1003.0744, 24.9148, 270.2914) },
    [2] = { coords = vector4(462.3722, -999.7912, 24.9149, 270.2914) },
