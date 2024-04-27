@@ -1,12 +1,9 @@
-https://i.imgur.com/16kd9bR.png
+[![Evidence Boxes Preview](https://i.imgur.com/16kd9bR.png)]
 # Evidence Boxes
 A new modern script to provide quality roleplay to Law Enforcment players. Ever have items from a suspect which is the the detention cell, and you need to store it somewhere, so other police officers can find it? Here come the evidence boxes, which locations you can configure and place where you would like them to be.
 
-## Preview Photos
-*When targetted*
-![image|596x499, 75%](upload://3buCCuJyJ7hsFhpiBIHPUf3SyNR.jpeg)
-
-*Evidence Bag Open opened*
+## Links
+- [Join our discord]()
 
 ## Features
 - Supports all frameworks which can use the dependencies
