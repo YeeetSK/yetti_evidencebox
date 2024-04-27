@@ -14,26 +14,24 @@ for k, v in ipairs(Config.BoxLocations) do
             lib.requestModel(modelHash)
 
             model = CreateObject(modelHash, v.coords.x, v.coords.y, v.coords.z - 1, v.coords.w, false) -- Creating the prop once loaded
+            SetEntityHeading(model, v.coords.w)
             FreezeEntityPosition(model, true)
-
+            SetModelAsNoLongerNeeded(model)
             self.modelEntity = model
 
-            self.targetID = exports.ox_target:addBoxZone({
-                coords = vector3(self.coords.x, self.coords.y, self.coords.z - 1),
-                size = vector3(1.2, 1.2, 3.0),
-                rotation = 0.0,
+          self.targetID = exports.ox_target:addSphereZone({
+                coords = vec3(self.coords.x, self.coords.y, self.coords.z + 0.2),
+                radius = 0.35,
                 debug = Config.Debug,
-                options = {
-                    {
-                        onSelect = function (data)
-                            exports.ox_inventory:openInventory('stash', stashName)
-                        end,
-                        icon = Config.TargetIcon,
-                        label = Config.TargetLabel:format(k),
-                        distance = Config.TargetDistance,
-                        groups = Config.AccessJobs
-                    }
-                }
+                options = {{
+                    onSelect = function(data)
+                        exports.ox_inventory:openInventory('stash', stashName)
+                    end,
+                    icon = Config.TargetIcon,
+                    label = (Config.TargetLabel):format(k),
+                    distance = Config.TargetDistance,
+                    groups = Config.AccessJobs
+                }}
             })
         end,
         onExit = function (self)
