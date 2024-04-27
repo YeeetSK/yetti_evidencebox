@@ -1,3 +1,5 @@
+local model
+
 for k, v in ipairs(Config.BoxLocations) do
     lib.zones.sphere({
         coords = v.coords,
@@ -11,7 +13,7 @@ for k, v in ipairs(Config.BoxLocations) do
 
             lib.requestModel(modelHash)
 
-            local model = CreateObject(modelHash, v.coords.x, v.coords.y, v.coords.z - 1, v.coords.w, false) -- Creating the prop once loaded
+            model = CreateObject(modelHash, v.coords.x, v.coords.y, v.coords.z - 1, v.coords.w, false) -- Creating the prop once loaded
             FreezeEntityPosition(model, true)
 
             self.modelEntity = model
@@ -44,3 +46,10 @@ for k, v in ipairs(Config.BoxLocations) do
     })
 end
 
+AddEventHandler('onResourceStop', function(resource)
+    if cache.resource ~= resource then return end
+    if DoesEntityExist(model) then
+        DeleteEntity(model)
+        model = nil
+    end
+end)
