@@ -4,7 +4,7 @@ A new modern script to provide quality roleplay to Law Enforcment players. Ever 
 
 ## Links
 - [Join our discord](https://discord.gg/ZA3sXeQEW6)
-- [Cfx.re Forums]()
+- [Cfx.re Forums](https://forum.cfx.re/t/evidence-boxes-free/5230031)
 - [Docs](https://yetti-development.gitbook.io/yetti-development/free-scripts/yetti-evidenceboxes)
 
 ## Features
